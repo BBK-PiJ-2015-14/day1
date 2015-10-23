@@ -9,19 +9,27 @@ print "2st number please: "
 String sNr2 = System.console().readLine()
 int iNr2 = Integer.parseInt(sNr2)
 
-int divider = 1
-int product = 0 
+int divider = 0
+int testProduct = 0 
 int remainer = 0
+int product = 0
 
-while (product <= iNr1){
+while (testProduct <= iNr1){
+    divider++;	
+	testProduct = divider * iNr2
 
-	product = divider * iNr2
-	println "divider: " + divider + " Nr2: " + iNr2 + " prodct: " + product
 	
-	if (product >= iNr1) {
-		remainer = iNr2 - divider
+	if (testProduct == iNr1) {
+		divider = divider 
 		break;
 	}
-    divider++;		
+	else if (testProduct > iNr1){
+		divider = divider - 1 //compensate for current failed iteration
+		break;	    
+	}
+	
+	println "divider: " + divider + " Nr2: " + iNr2 + " prodct: " + testProduct
 }
-println iNr1 + " divided by " + iNr2 + " equals " + divider + " remainer " + remainer
+product = divider * iNr2
+remainer = iNr1 - product
+println "ANSWER: " + iNr1 + " divided by " + iNr2 + " = " + divider + " remainer " + remainer
