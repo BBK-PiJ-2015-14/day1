@@ -8,9 +8,14 @@ List<Integer> toSortOriginal = new ArrayList<Integer>()
 
 // Collect Numbers
 while (isContinue) {
-  println "Please add an integer to a list. Type a letter to exit >> "  
+  println "Please add an integer to a list. Type '-1' or any letter to exit >> "  
   String sNr2 = System.console().readLine()
+
   try{
+	 //assignment asked for this specific exit possible 
+	 if (sNr2 == "-1")
+	      throw new Exception()
+
      toSort.push (Integer.parseInt(sNr2))  
   }
   catch (all){
