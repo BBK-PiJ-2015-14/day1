@@ -26,7 +26,7 @@ println "Exiting collection: Total " + toSort.size + " numbers collected!"
 
 
 	
-// My attempt at bubble sort. Not tried in 20 years.
+// prepare to iterate list as zero based index
 for (x in 0..toSort.size-1) {
     //make sure we only swap if less than last pos
     if (x < toSort.size-1){
